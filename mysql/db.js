@@ -8,5 +8,4 @@ const connection = mysql.createPool({
     database: String(process.env.DATABASE)
 })
 
-
 export default connection

@@ -2,8 +2,8 @@ import connection from "../db.js"
 
 class UserModel {
 
-    static async getTodos(){
-        const [result] = await db.query("SELECT * FROM users")
+    static async getTodos(offset, on){
+        const [result] = await db.query("SELECT * FROM users LIMIT (?), (?)", [parseInt(offset), parseInt(on)])
         return result
     }
 

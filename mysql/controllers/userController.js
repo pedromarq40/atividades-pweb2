@@ -4,7 +4,8 @@ class UserController{
 
     static async getTodos(req, res){
         try{
-            const result = await UserModel.getTodos()
+            const {offset, on} = req.params
+            const result = await UserModel.getTodos(offset, on)
             console.log(result)
             return res.status(201).json(result)
         }catch(err){

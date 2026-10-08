@@ -3,8 +3,8 @@ import Router from 'express'
 
 const UserRouter = Router()
 
-UserRouter.get("/", UserController.getTodos())
-UserRouter.get("/:id", UserController.getUm())
-UserRouter.post("/", UserController.update())
+UserRouter.get("/:offset/:on", UserController.getTodos)
+UserRouter.get("/:id", UserController.getUm)
+UserRouter.post("/", UserController.update)
 
 export default UserRouter
